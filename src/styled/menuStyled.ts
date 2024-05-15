@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { CiLight } from "react-icons/ci";
+import { MdOutlineNightlight } from "react-icons/md";
 
 
 export const BasicBtnStyled = styled.button`
@@ -15,6 +17,34 @@ export const BasicBtnStyled = styled.button`
     &:hover{
         background-color: grey;
         color: red;
+    }
+`
+
+export const LightOn = styled(CiLight)`
+    font-weight: 600;
+    width: 5rem;
+    height: 2.5rem;
+    background: none;
+    color: #e1ba01;
+    transition: all ease 300ms;
+
+    &:hover{
+        filter: drop-shadow(2px 1px 1px white);
+        cursor: pointer;
+    }
+`
+
+export const LightOff = styled(MdOutlineNightlight)`
+    font-weight: 600;
+    width: 5rem;
+    height: 2.5rem;
+    background: none;
+    color: #e1ba01;
+    transition: all ease 300ms;
+
+    &:hover{
+        filter: drop-shadow(2px 1px 1px white);
+        cursor: pointer;
     }
 `
 
@@ -38,4 +68,12 @@ export const NavLinkStyled = styled(NavLink)`
 export const LogoContainer = styled.div`
     position: absolute;
     top: 0;
+    display: flex;
+    align-items: center;
+`
+
+export const NavDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
 `
