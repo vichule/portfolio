@@ -18,4 +18,5 @@ const FooterText = styled.h3`
     padding: 1em;
     background-color: black;
     letter-spacing: 3px;
+    font-family: "Bebas Neue", sans-serif;
 `
