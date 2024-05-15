@@ -9,9 +9,7 @@
   transition: filter 300ms;
   filter: brightness(0) drop-shadow(1px 1px 5px #bc9cff);
 }
-/* .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-} */
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em white);
 }
@@ -32,9 +30,6 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
 }
 
-.read-the-docs {
-  color: #888;
-}
