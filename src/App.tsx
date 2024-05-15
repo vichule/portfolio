@@ -15,7 +15,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 function App() {
 
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
   console.log(theme)
 
   return (
