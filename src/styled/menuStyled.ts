@@ -10,15 +10,15 @@ export const BasicBtnStyled = styled.button`
     height: 3.5rem;
     border: none;
     border-radius: 8px;
-    background-color: black;
+    background-color: ${({ theme }) => theme.btnBg};
     color: white;
     transition: all ease 300ms;
     display: inline-block;
     align-content: center;
 
     &:hover{
-        background-color: grey;
-        color: red;
+        background-color: #d156cd;
+        color: black;
     }
 `
 
@@ -51,7 +51,7 @@ export const LightOff = styled(MdOutlineNightlight)`
 `
 
 export const NavLinkStyled = styled(NavLink)`
-    color: black;
+    color: ${({ theme }) => theme.titleColor};
     font-size: 1.8rem;
     font-weight: 400;
     align-items: center;
@@ -59,10 +59,10 @@ export const NavLinkStyled = styled(NavLink)`
     font-family: "Bebas Neue", sans-serif;
     &.active {
         font-weight: 600;
-        border-bottom: 3px solid black;
+        border-bottom: 3px solid ${({ theme }) => theme.titleColor};
   }
   &:hover {
-    color: black;
+    color: ${({ theme }) => theme.titleColor};
     filter: drop-shadow(1px 1px 5px deeppink);
   }
 `
@@ -77,5 +77,5 @@ export const LogoContainer = styled.div`
 export const NavDiv = styled.div`
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: ${({ theme }) => theme.bgColor};
 `
