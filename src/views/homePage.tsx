@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import photo from '../assets/code.jpg'
 import { ThemeContext } from '../App';
 import { BasicBtnStyled, LightOff, LightOn, NavDiv, NavLinkStyled } from '../styled/menuStyled';
-import { AboutDiv, BannerDiv, CodeIcon, HomeBanner, HomeContact, HomeContainer, HomeProjects, ImgContainer, IntroDiv, TipsDiv, UlStyled } from '../styled/homeStyled';
+import { AboutDiv, BannerDiv, CodeIcon, HomeBanner, HomeContact, HomeContainer, HomeProjects, ImgContainer, IntroDiv, TipsDiv, UlContact, UlStyled, UpBtn } from '../styled/homeStyled';
 import { useNavigate } from 'react-router-dom';
 import { SwiperProjects } from '../components/swiperProjects.tsx';
 import { FormContainer, FormStyled, InputContainer, InputForms, LabelForms, TextAreaForms } from '../styled/formStyled.ts';
@@ -19,13 +19,6 @@ export const Home = () => {
     }
 
     const { theme, setTheme } = themeContext;
-
-    // const handleSubmit = () => (event: React.FormEvent<HTMLFormElement>) => {
-    //     event.preventDefault()
-    //     console.log('send')
-
-    // }
-
 
     return (
         <HomeContainer>
@@ -67,6 +60,19 @@ export const Home = () => {
                         de poder aprender más y evolucionar como developer.
                     </p>
                     <p>Aquí podrás navegar y ver mi recorrido: </p>
+                    <TipsDiv>
+                        <div>
+                            <h2>Estamos en contacto</h2>
+                            <p>¿Tienes algun consejo para mi?</p>
+                            <div className="card">
+
+                                <BasicBtnStyled as="a" href="#contact">
+                                    Contactame!
+                                </BasicBtnStyled>
+                            </div>
+                        </div>
+
+                    </TipsDiv>
                 </div>
                 <CodeIcon />
             </IntroDiv>
@@ -88,7 +94,7 @@ export const Home = () => {
                         <li>Considero que el teletrabajo es muy positivo, aunque siempre es bueno ir a la oficina al menos un dia a la semana para mejorar la comunicación entre compañeros.</li>
                         <div className="card">
                             <h1>Si quieres saber más de mí:</h1>
-                            <BasicBtnStyled as="a" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor">
+                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor">
                                 Descargar CV
                             </BasicBtnStyled>
                         </div>
@@ -96,19 +102,7 @@ export const Home = () => {
 
                 </AboutDiv>
             </div>
-            <TipsDiv>
-                <div>
-                    <h2>Estamos en contacto</h2>
-                    <p>¿Tienes algun consejo para mi?</p>
-                    <div className="card">
 
-                        <BasicBtnStyled as="a" href="#contact">
-                            Contactame!
-                        </BasicBtnStyled>
-                    </div>
-                </div>
-
-            </TipsDiv>
             <HomeProjects>
                 <h1>Mis proyectos:</h1>
                 <h3>Te invito a echarle un ojo a mis proyectos.</h3>
@@ -127,10 +121,11 @@ export const Home = () => {
             </HomeProjects>
             <HomeContact id='contact'>
                 <h1>Contact</h1>
+                <h3>Desde aqui podrás enviarme un mensaje desde este formulario directo a mi bandeja de entrada</h3>
                 <FormContainer>
                     <FormStyled action="https://formsubmit.co/2461bbd3a28ad50544f2913659e7b2f5" method="POST">
 
-                        <div style={{ display: 'flex'}}>
+                        <div style={{ display: 'flex' }}>
                             <InputContainer>
                                 <LabelForms htmlFor="name">Full Name</LabelForms>
                                 <InputForms type="text" name="name" required />
@@ -154,7 +149,15 @@ export const Home = () => {
                         </div>
                     </FormStyled>
                 </FormContainer>
+                <h3>Estoy deseando tener noticias tuyas por lo que aqui dejo también mis datos de contacto:</h3>
+                <div>
+                    <UlContact>
+                        <li>Teléfono: 646816908</li>
+                        <li>Email: javier.cabanasdiaz@gmail.com</li>
+                    </UlContact>
+                </div>
             </HomeContact>
+            <UpBtn as='a' href='#intro'>^</UpBtn>
         </HomeContainer >
 
     )
