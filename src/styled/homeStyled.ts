@@ -51,7 +51,6 @@ export const HomeProjects = styled.div`
         color: ${({ theme }) => theme.titleColor};
     }
     h3{
-        text-decoration: underline;
         font-family: "Bebas Neue", sans-serif;
         letter-spacing: 3px;
     }
@@ -69,7 +68,6 @@ export const HomeContact = styled.div`
         color: ${({ theme }) => theme.titleColor};
     }
     h3{
-        text-decoration: underline;
         font-family: "Bebas Neue", sans-serif;
         letter-spacing: 3px;
     }
@@ -82,7 +80,7 @@ export const ProjectContainer = styled.div`
     img{
         width: 100%;
         height: 100%;
-        border: 3px solid black;
+        border: 3px solid ${({ theme }) => theme.imgBorder};
         border-radius: 1em;
     }
 `
@@ -158,23 +156,64 @@ export const ImgContainer = styled.div`
 `
 
 export const TipsDiv = styled.div`
-    background-image: url(${bannerC});
+    /* background-image: url(${bannerC});
     background-size: cover;
-    min-height: 50em;
+    min-height: 50em; */
     font-family: "DM Serif Display", serif;
     text-align: center;
     margin-bottom: 10em;
 
     div:nth-child(1){
-        position: relative;
+        /* position: relative;
         top: 200px;
         float: left;
         margin-left: 50px;
         border: 5px solid white;
+        padding: 25px; */
+        position: relative;
+        top: 50px;
+        float: left;
+        border: 5px solid ${({theme}) => theme.textColor};
         padding: 25px;
+        border-radius: 1em;
     }
 
     h2{
         font-family: "Bebas Neue", sans-serif;
     }
+`
+
+export const UpBtn = styled.button`
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: deeppink;
+    margin: 1em;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: white;
+    text-align: center;
+    align-content: center;
+    transition: all ease 300ms;
+
+    &:hover{
+        background-color: #d156cd;
+        color: black;
+    }
+`
+
+export const UlContact = styled.ul`
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
 `

@@ -31,7 +31,7 @@ export const LightOn = styled(CiLight)`
     transition: all ease 300ms;
 
     &:hover{
-        filter: drop-shadow(2px 1px 1px black);
+        filter: drop-shadow(2px 1px 1px white);
         cursor: pointer;
     }
 `
