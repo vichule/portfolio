@@ -1,8 +1,7 @@
 import { useContext } from 'react';
-import reactLogo from '../assets/react.svg';
 import { ThemeContext } from '../App';
-import { NavLink } from 'react-router-dom';
-import { BasicBtnStyled } from '../styled/menuStyled';
+import { LightOff, LightOn, NavDiv, NavLinkStyled } from '../styled/menuStyled';
+import { BannerDiv, CodeIcon, HomeBanner, HomeContainer, IntroDiv, UlStyled } from '../styled/homeStyled';
 
 export const Projects = () => {
 
@@ -15,23 +14,51 @@ export const Projects = () => {
     const { theme, setTheme } = themeContext;
     return (
         <>
-            <div>
-                <ul>
-                    <li><NavLink to={'/'}>Home</NavLink></li>
-                    <li><NavLink to={'/projects'}>Projects</NavLink></li>
-                </ul>
-            </div>
-            <div>
-                <img src={reactLogo} className="logo react" alt="React logo" />
-            </div>
-            <h1>My projects</h1>
-            <div className="card">
-                <BasicBtnStyled onClick={() => {
-                    setTheme(theme === 'dark' ? 'light' : 'dark');
-                }}>
-                    Toggle theme
-                </BasicBtnStyled>
-            </div>
+            <HomeContainer>
+                <HomeBanner id='intro'>
+
+                    <BannerDiv >
+
+                        <h1>| JAVIER CABAÑAS |</h1>
+                        <h1>| Full-Stack Junior Developer |</h1>
+                        <h3>Trying to find the path to success</h3>
+
+                    </BannerDiv>
+                </HomeBanner>
+                <NavDiv>
+
+                    <div className="card">
+                        {theme === 'dark' ? <LightOn onClick={() => {
+                            setTheme(theme === 'dark' ? 'light' : 'dark');
+                        }}>
+                            {theme}
+                        </LightOn> : <LightOff onClick={() => {
+                            setTheme(theme === 'dark' ? 'light' : 'dark');
+                        }}>
+                            {theme}
+                        </LightOff>}
+
+                    </div>
+                    <UlStyled>
+                        <li><NavLinkStyled to={'/'}>Home</NavLinkStyled></li>
+                        <li><NavLinkStyled to={'/projects'}>Projects</NavLinkStyled></li>
+                    </UlStyled>
+
+                </NavDiv>
+                <IntroDiv>
+
+                    <div style={{ maxWidth: '65em' }}>
+                        <h1>Antes que nada: Bienvenido!</h1>
+                        <p>Hola! Mi nombre es Javier Cabañas y este es mi portfolio! Soy un apasionado de la programación
+                            y desde hace tiempo he querido vivir trabajando en este mundo tan diverso y gigante con el fin
+                            de poder aprender más y evolucionar como developer.
+                        </p>
+                        <p>Aquí podrás navegar y ver mi recorrido: </p>
+                    </div>
+                    <CodeIcon />
+                </IntroDiv>
+
+            </HomeContainer>
         </>
     )
 }

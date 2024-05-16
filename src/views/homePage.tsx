@@ -1,13 +1,13 @@
 import { useContext } from 'react';
-import reactLogo from '../assets/react.svg';
-import bannerB from '../assets/sky.jpg';
 import photo from '../assets/code.jpg'
-import bannerC from '../assets/laptop.jpg';
 import { ThemeContext } from '../App';
-import { BasicBtnStyled, LightOff, LightOn, LogoContainer, NavDiv, NavLinkStyled } from '../styled/menuStyled';
-import styled from 'styled-components';
-import { CodeIcon, HomeContact, HomeContainer, HomeProjects, IntroDiv, UlStyled } from '../styled/homeStyled';
+import { BasicBtnStyled, LightOff, LightOn, NavDiv, NavLinkStyled } from '../styled/menuStyled';
+import { AboutDiv, BannerDiv, CodeIcon, HomeBanner, HomeContact, HomeContainer, HomeProjects, ImgContainer, IntroDiv, TipsDiv, UlStyled } from '../styled/homeStyled';
 import { useNavigate } from 'react-router-dom';
+import { SwiperProjects } from '../components/swiperProjects.tsx';
+import { FormContainer, FormStyled, InputContainer, InputForms, LabelForms, TextAreaForms } from '../styled/formStyled.ts';
+
+
 
 export const Home = () => {
 
@@ -19,23 +19,23 @@ export const Home = () => {
     }
 
     const { theme, setTheme } = themeContext;
+
+    // const handleSubmit = () => (event: React.FormEvent<HTMLFormElement>) => {
+    //     event.preventDefault()
+    //     console.log('send')
+
+    // }
+
+
     return (
         <HomeContainer>
             <HomeBanner id='intro'>
-
-
-
-                <TempDiv>
-                    <LogoContainer>
-                        <img src={reactLogo} className="logo react" alt="React logo" />
-                        {/* <h2>Javier Cabañas</h2> */}
-                    </LogoContainer>
-
-                </TempDiv>
                 <BannerDiv >
-                    <h1>Trying to find the path to success</h1>
-                    <h3>| Full-Stack Junior Developer |</h3>
-                    <h3>| JAVIER CABAÑAS |</h3>
+
+                    <h1>| JAVIER CABAÑAS |</h1>
+                    <h1>| Full-Stack Junior Developer |</h1>
+                    <h3>Trying to find the path to success</h3>
+
                 </BannerDiv>
             </HomeBanner>
             <NavDiv>
@@ -64,7 +64,7 @@ export const Home = () => {
                     <h1>Antes que nada: Bienvenido!</h1>
                     <p>Hola! Mi nombre es Javier Cabañas y este es mi portfolio! Soy un apasionado de la programación
                         y desde hace tiempo he querido vivir trabajando en este mundo tan diverso y gigante con el fin
-                        de poder aprender más y demostrar al mundo mis capacidades.
+                        de poder aprender más y evolucionar como developer.
                     </p>
                     <p>Aquí podrás navegar y ver mi recorrido: </p>
                 </div>
@@ -87,9 +87,8 @@ export const Home = () => {
                         <li>Busco un trabajo donde pueda conocer a personas y no solo puestos de trabajo o numeros. </li>
                         <li>Considero que el teletrabajo es muy positivo, aunque siempre es bueno ir a la oficina al menos un dia a la semana para mejorar la comunicación entre compañeros.</li>
                         <div className="card">
-                            <h1>Clickea en el botón si quieres saber más de mí:</h1>
-                            <BasicBtnStyled onClick={() => {
-                            }}>
+                            <h1>Si quieres saber más de mí:</h1>
+                            <BasicBtnStyled as="a" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor">
                                 Descargar CV
                             </BasicBtnStyled>
                         </div>
@@ -115,13 +114,8 @@ export const Home = () => {
                 <h3>Te invito a echarle un ojo a mis proyectos.</h3>
                 <p>Esto es una simple vista por encima, si quieres más detalles clickea más abajo!</p>
                 <div>
-                    <h2>Swiper de fotos y datos de mis proyectos</h2>
-                    <ul>
-                        <li>Oxygen Shop</li>
-                        <li>App de Fotos</li>
-                        <li>Hotel Miranda WebSite</li>
-                        <li>Hotel Miranda Dashboard</li>
-                    </ul>
+                    <SwiperProjects />
+
                 </div>
                 <div className="card">
                     <BasicBtnStyled onClick={() => {
@@ -133,116 +127,37 @@ export const Home = () => {
             </HomeProjects>
             <HomeContact id='contact'>
                 <h1>Contact</h1>
-                <form>
-                    <ul>
-                        <li><label>Full Name</label><input type="text" name="name" required placeholder="Your name" /></li>
-                        <li>
-                            <label>Email</label>
-                            <input type="email" name="field3" required/>
-                        </li>
-                        <li>
-                            <label>Subject</label>
-                            <input type="text" name='subject'/>
-                        </li>
-                        <li>
-                            <label>Your Message</label>
-                            <textarea name="message" id="message"></textarea>
-                        </li>
-                        <li>
-                            <input type="submit" value="Submit" />
-                        </li>
-                    </ul>
-                </form>
+                <FormContainer>
+                    <FormStyled action="https://formsubmit.co/2461bbd3a28ad50544f2913659e7b2f5" method="POST">
+
+                        <div style={{ display: 'flex'}}>
+                            <InputContainer>
+                                <LabelForms htmlFor="name">Full Name</LabelForms>
+                                <InputForms type="text" name="name" required />
+                            </InputContainer>
+                            <InputContainer>
+                                <LabelForms htmlFor="email">Email</LabelForms>
+                                <InputForms type="email" name="email" required />
+                            </InputContainer>
+                        </div>
+                        <InputContainer>
+                            <LabelForms htmlFor="subject">Subject</LabelForms>
+                            <InputForms type="text" name="subject" required />
+                        </InputContainer>
+
+                        <InputContainer>
+                            <LabelForms htmlFor="message">Message</LabelForms>
+                            <TextAreaForms name="notes" id="message" cols={30} rows={8} required></TextAreaForms>
+                        </InputContainer>
+                        <div className="card">
+                            <BasicBtnStyled type="submit">Enviar</BasicBtnStyled>
+                        </div>
+                    </FormStyled>
+                </FormContainer>
             </HomeContact>
-        </HomeContainer>
+        </HomeContainer >
 
     )
 }
 
-const HomeBanner = styled.div`
-    background-image: url(${bannerB});
-    min-height: 940px;
-    padding: 1em;
-    background-size: cover;
-`
 
-const TempDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
-const BannerDiv = styled.div`
-    text-align: center;
-    display: flex;
-    margin: 20em;
-    border: 8px solid white;
-    flex-direction: column;
-    padding: 1em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    
-    h1{
-        letter-spacing: 10px;
-        font-family: "Bebas Neue", sans-serif;
-    }
-    h3{
-        letter-spacing: 10px;
-    }
-`
-
-const AboutDiv = styled.div`
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 5em;
-    font-family: "DM Serif Display", serif;
-    ul{
-        display: flex;
-        list-style: square;
-        align-items: flex-start;
-        max-width: 45em;
-        flex-direction: column;
-    }
-
-    li{
-        margin-bottom: 1em;
-        margin-left: 2em;
-        font-size: large;
-    }
-
-    h1{
-        font-family: "Bebas Neue", sans-serif;
-    }
-    
-`
-
-const ImgContainer = styled.div`
-    width: 600px;
-
-    img{
-        width: 100%;
-        height: 100%;
-        border-radius: 2em;
-    }
-`
-
-const TipsDiv = styled.div`
-    background-image: url(${bannerC});
-    background-size: cover;
-    min-height: 50em;
-    font-family: "DM Serif Display", serif;
-    text-align: center;
-
-    div:nth-child(1){
-        position: relative;
-        top: 200px;
-        float: left;
-        margin-left: 50px;
-        border: 5px solid white;
-        padding: 25px;
-    }
-
-    h2{
-        font-family: "Bebas Neue", sans-serif;
-    }
-`
