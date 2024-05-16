@@ -4,6 +4,8 @@ import { Footer } from './components/footer';
 import { Home } from './views/homePage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Projects } from './views/projectsPage';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles, dark, light } from './theme/themeConfig';
 
 type ThemeContextType = {
   theme: string;
@@ -20,15 +22,17 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/projects' element={<Projects />} />
-        </Routes>
+      <ThemeProvider theme={theme === 'dark' ? dark : light}>
+        <GlobalStyles />
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/projects' element={<Projects />} />
+          </Routes>
 
-        <Footer />
-      </BrowserRouter>
-
+          <Footer />
+        </BrowserRouter>
+      </ThemeProvider>
     </ThemeContext.Provider>
   )
 }
