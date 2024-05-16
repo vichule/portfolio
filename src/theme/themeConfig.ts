@@ -5,6 +5,7 @@ export interface Theme {
     textColor: string;
     titleColor: string;
     btnBg: string;
+    imgBorder: string;
 }
 
 export const light: Theme = {
@@ -12,13 +13,15 @@ export const light: Theme = {
     textColor: 'black',
     titleColor: 'black',
     btnBg: 'black',
+    imgBorder: 'black'
 };
 
 export const dark: Theme = {
     bgColor: 'black',
     titleColor: 'deeppink',
     textColor: 'white',
-    btnBg: 'deeppink'
+    btnBg: 'deeppink',
+    imgBorder: 'white'
 };
 
 

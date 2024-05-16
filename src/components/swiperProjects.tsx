@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from "swiper/modules";
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import "swiper/css/autoplay";
 import styled from "styled-components";
 import { ProjectContainer } from "../styled/homeStyled";
 import coolpic from '../assets/coolpic.jpg';
@@ -17,11 +17,15 @@ export const SwiperProjects = () => {
     return (
         <>
             <StyledSwiper
-                modules={[Navigation, Pagination]}
+                modules={[Autoplay, Pagination]}
                 slidesPerView={2}
                 spaceBetween={0}
+                loop={true}
                 pagination={true}
-
+                autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                  }}
             >
 
                 
@@ -29,6 +33,13 @@ export const SwiperProjects = () => {
                     <ProjectContainer>
                         <h2>Hotel Miranda WebSite</h2>
                         <img src={hotel} />
+
+                    </ProjectContainer>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <ProjectContainer>
+                        <h2>App de Fotos</h2>
+                        <img src={coolpic} />
 
                     </ProjectContainer>
                 </SwiperSlide>
@@ -47,13 +58,7 @@ export const SwiperProjects = () => {
 
                     </ProjectContainer>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <ProjectContainer>
-                        <h2>App de Fotos</h2>
-                        <img src={coolpic} />
-
-                    </ProjectContainer>
-                </SwiperSlide>
+                
 
 
 
