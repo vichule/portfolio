@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { PiCodeLight } from "react-icons/pi";
+import { FaPhone } from "react-icons/fa6";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { FaGithub } from "react-icons/fa6";
+import { ImLinkedin } from "react-icons/im";
 import bannerC from '../assets/laptop.jpg';
 import bannerB from '../assets/sky.jpg';
 
@@ -44,6 +48,7 @@ export const HomeProjects = styled.div`
     color: black;
     font-family: "DM Serif Display", serif;
     color: ${({ theme }) => theme.textColor};
+    margin-bottom: 10em;
 
     h1{
         font-family: "Bebas Neue", sans-serif;
@@ -123,6 +128,7 @@ export const AboutDiv = styled.div`
     padding-bottom: 5em;
     font-family: "DM Serif Display", serif;
     color: ${({ theme }) => theme.textColor};
+    margin-bottom: 10em;
 
     ul{
         display: flex;
@@ -212,8 +218,37 @@ export const UpBtn = styled.button`
 export const UlContact = styled.ul`
     display: flex;
     list-style: none;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     align-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5em;
+    li{
+        display: flex;
+        align-items: center;
+        margin-right: 2em;
+    }
+`
+
+export const PhoneIcon = styled(FaPhone)`
+    width: 50px;
+    font-size: 2.5em;
+    margin-right: 0.3em;
+    color: ${({theme})=> theme.btnBg};
+`
+
+export const MailIcon = styled(MdOutlineMailOutline)`
+    width: 50px;
+    font-size: 4em;
+    margin-right: 0.25em;
+    color: ${({theme})=> theme.btnBg};
+`
+
+export const GitIcon = styled(FaGithub)`
+
+`
+
+export const LinkedIcon = styled(ImLinkedin)`
+
 `

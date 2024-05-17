@@ -35,7 +35,7 @@ export const InputForms = styled.input`
     border: none;
     color: deeppink;
     font-size: 1.3rem;
-    max-width: 12em;
+    /* max-width: 12em; */
 `
 
 export const TextAreaForms = styled.textarea`
