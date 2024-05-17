@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import photo from '../assets/code.jpg'
 import { ThemeContext } from '../App';
 import { BasicBtnStyled, LightOff, LightOn, NavDiv, NavLinkStyled } from '../styled/menuStyled';
-import { AboutDiv, BannerDiv, CodeIcon, HomeBanner, HomeContact, HomeContainer, HomeProjects, ImgContainer, IntroDiv, TipsDiv, UlContact, UlStyled, UpBtn } from '../styled/homeStyled';
+import { AboutDiv, BannerDiv, CodeIcon, GitIcon, HomeBanner, HomeContact, HomeContainer, HomeProjects, ImgContainer, IntroDiv, LinkedIcon, MailIcon, PhoneIcon, TipsDiv, UlContact, UlStyled, UpBtn } from '../styled/homeStyled';
 import { useNavigate } from 'react-router-dom';
 import { SwiperProjects } from '../components/swiperProjects.tsx';
 import { FormContainer, FormStyled, InputContainer, InputForms, LabelForms, TextAreaForms } from '../styled/formStyled.ts';
@@ -97,6 +97,9 @@ export const Home = () => {
                             <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor">
                                 Descargar CV
                             </BasicBtnStyled>
+                            <a rel="nofollow noopener noreferrer" target='blank' href="https://www.linkedin.com/in/javinteger/"><LinkedIcon/></a>
+                            <a rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule"><GitIcon/></a>
+                            
                         </div>
                     </ul>
 
@@ -152,8 +155,8 @@ export const Home = () => {
                 <h3>Estoy deseando tener noticias tuyas por lo que aqui dejo también mis datos de contacto:</h3>
                 <div>
                     <UlContact>
-                        <li>Teléfono: 646816908</li>
-                        <li>Email: javier.cabanasdiaz@gmail.com</li>
+                        <li><PhoneIcon/>Teléfono - 646816908</li>
+                        <li><MailIcon/>Email - javier.cabanasdiaz@gmail.com</li>
                     </UlContact>
                 </div>
             </HomeContact>

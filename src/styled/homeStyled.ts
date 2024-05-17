@@ -246,9 +246,29 @@ export const MailIcon = styled(MdOutlineMailOutline)`
 `
 
 export const GitIcon = styled(FaGithub)`
+    width: 45px;
+    font-size: 2.5em;
+    margin-left: 0.3em;
+    color: ${({theme})=> theme.btnBg}; 
+    cursor: pointer;
+    position: relative;
+    top: 0.25em;
 
+    &:hover{
+        color: #d156cd;
+    }
 `
 
 export const LinkedIcon = styled(ImLinkedin)`
-
+    width: 45px;
+    font-size: 2.5em;
+    margin-left: 0.3em;
+    color: ${({theme})=> theme.btnBg}; 
+    cursor: pointer;
+    position: relative;
+    top: 0.25em;
+    
+    &:hover{
+        color: #d156cd;
+    }
 `
