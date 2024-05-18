@@ -10,15 +10,17 @@ export const ProjectsContainer = styled.div`
     justify-content: space-around;  
     font-family: "DM Serif Display", serif;
     text-align: center;
-
+    
 
     h3{
         font-family: "Bebas Neue", sans-serif;
         letter-spacing: 3px;
+        color: ${({ theme }) => theme.titleColor};
     }
     p{
         max-width: 40em;
         font-size: large;
+        color: ${({ theme }) => theme.textColor};
     }
 `
 
@@ -32,4 +34,9 @@ export const MainImg = styled.div`
         border-radius: 2em;
         border: 3px solid black;
     }
+`
+
+export const CardItem = styled.div`
+    margin-bottom: 5em;
+    padding: 1.5em;
 `
