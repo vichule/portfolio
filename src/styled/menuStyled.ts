@@ -15,6 +15,8 @@ export const BasicBtnStyled = styled.button`
     transition: all ease 300ms;
     display: inline-block;
     align-content: center;
+    margin-right: 1em;
+    margin-left: 1em;
 
     &:hover{
         background-color: #d156cd;

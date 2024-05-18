@@ -4,7 +4,6 @@ import { FaPhone } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
 import { ImLinkedin } from "react-icons/im";
-import bannerC from '../assets/laptop.jpg';
 import bannerB from '../assets/sky.jpg';
 
 export const HomeContainer = styled.div`
@@ -97,11 +96,6 @@ export const HomeBanner = styled.div`
     background-size: cover;
 `
 
-// export const TempDiv = styled.div`
-//     display: flex;
-//     flex-direction: column;
-// `
-
 export const BannerDiv = styled.div`
     text-align: center;
     display: flex;
@@ -162,9 +156,6 @@ export const ImgContainer = styled.div`
 `
 
 export const TipsDiv = styled.div`
-    /* background-image: url(${bannerC});
-    background-size: cover;
-    min-height: 50em; */
     font-family: "DM Serif Display", serif;
     text-align: center;
     margin-bottom: 10em;
