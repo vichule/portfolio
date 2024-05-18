@@ -2,10 +2,10 @@ import { useContext } from 'react';
 import photo from '../assets/code.jpg'
 import { ThemeContext } from '../App';
 import { BasicBtnStyled, LightOff, LightOn, NavDiv, NavLinkStyled } from '../styled/menuStyled';
-import { AboutDiv, BannerDiv, CodeIcon, GitIcon, HomeBanner, HomeContact, HomeContainer, HomeProjects, ImgContainer, IntroDiv, LinkedIcon, MailIcon, PhoneIcon, TipsDiv, UlContact, UlStyled, UpBtn } from '../styled/homeStyled';
+import { AboutDiv, BannerDiv, CodeIcon, CvIcon, GitIcon, HomeBanner, HomeContact, HomeContainer, HomeProjects, ImgContainer, IntroDiv, LinkedIcon, MailIcon, PhoneIcon, TipsDiv, UlContact, UlStyled, UpBtn } from '../styled/homeStyled';
 import { useNavigate } from 'react-router-dom';
 import { SwiperProjects } from '../components/swiperProjects.tsx';
-import { FormContainer, FormStyled, InputContainer, InputForms, LabelForms, TextAreaForms } from '../styled/formStyled.ts';
+import { FormContainer, FormStyled, InputContainer, InputForms, TextAreaForms } from '../styled/formStyled.ts';
 
 
 
@@ -90,16 +90,17 @@ export const Home = () => {
                         <li>Con ganas de contribuir de manera positiva y crecer con un buen equipo a mi lado. </li>
                         <li>Como desarrollador Full-Stack he trabajado con MongoDB & MySQL, React, Node & Express, TypeScript y PHP entre otros.</li>
                         <li>Aún sigo siendo un junior en desarrollo pero me esfuerzo a diario en conseguir cumplir mi objetivo de convertirme en un auténtico Senior Full-Stack!</li>
-                        <li>Busco un trabajo donde pueda conocer a personas y no solo puestos de trabajo o numeros. </li>
-                        <li>Considero que el teletrabajo es muy positivo, aunque siempre es bueno ir a la oficina al menos un dia a la semana para mejorar la comunicación entre compañeros.</li>
+                        <li>Busco un trabajo donde pueda conocer a personas y no solo puestos de trabajo o números. </li>
+                        <li>Considero que el teletrabajo es muy positivo, aunque siempre es bueno ir a la oficina al menos un día a la semana para mejorar la comunicación entre compañeros.</li>
                         <div className="card">
                             <h1>Si quieres saber más de mí:</h1>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor">
-                                Descargar CV
-                            </BasicBtnStyled>
-                            <a rel="nofollow noopener noreferrer" target='blank' href="https://www.linkedin.com/in/javinteger/"><LinkedIcon/></a>
-                            <a rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule"><GitIcon/></a>
-                            
+                            {/* <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor">
+                                 CV
+                            </BasicBtnStyled> */}
+                            <a rel="nofollow noopener noreferrer" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor"><CvIcon /></a>
+                            <a rel="nofollow noopener noreferrer" target='blank' href="https://www.linkedin.com/in/javinteger/"><LinkedIcon /></a>
+                            <a rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule"><GitIcon /></a>
+
                         </div>
                     </ul>
 
@@ -124,39 +125,40 @@ export const Home = () => {
             </HomeProjects>
             <HomeContact id='contact'>
                 <h1>Contact</h1>
-                <h3>Desde aqui podrás enviarme un mensaje desde este formulario directo a mi bandeja de entrada</h3>
+                <h3>Desde aquí podrás enviarme un mensaje desde este formulario directo a mi bandeja de entrada</h3>
                 <FormContainer>
                     <FormStyled action="https://formsubmit.co/2461bbd3a28ad50544f2913659e7b2f5" method="POST">
 
                         <div style={{ display: 'flex' }}>
                             <InputContainer>
-                                <LabelForms htmlFor="name">Full Name</LabelForms>
-                                <InputForms type="text" name="name" required />
+                                {/* <LabelForms htmlFor="name">Full Name</LabelForms> */}
+                                <InputForms type="text" name="name" required placeholder='Nombre Completo'/>
                             </InputContainer>
                             <InputContainer>
-                                <LabelForms htmlFor="email">Email</LabelForms>
-                                <InputForms type="email" name="email" required />
+                                {/* <LabelForms htmlFor="email">Email</LabelForms> */}
+                                <InputForms type="email" name="email" required placeholder='Email para poder escribirte'/>
                             </InputContainer>
                         </div>
                         <InputContainer>
-                            <LabelForms htmlFor="subject">Subject</LabelForms>
-                            <InputForms type="text" name="subject" required />
+                            {/* <LabelForms htmlFor="subject">Subject</LabelForms> */}
+                            <InputForms type="text" name="subject" required placeholder='Asunto a tratar'/>
                         </InputContainer>
 
                         <InputContainer>
-                            <LabelForms htmlFor="message">Message</LabelForms>
-                            <TextAreaForms name="notes" id="message" cols={30} rows={8} required></TextAreaForms>
+                            {/* <LabelForms htmlFor="message">Message</LabelForms> */}
+                            <TextAreaForms name="notes" id="message" cols={30} rows={8} required placeholder='Deja aqui el mensaje que quieras que reciba'></TextAreaForms>
                         </InputContainer>
                         <div className="card">
                             <BasicBtnStyled type="submit">Enviar</BasicBtnStyled>
                         </div>
                     </FormStyled>
+
                 </FormContainer>
-                <h3>Estoy deseando tener noticias tuyas por lo que aqui dejo también mis datos de contacto:</h3>
+                <h3>Estoy deseando tener noticias tuyas por lo que aquí dejo también mis datos de contacto:</h3>
                 <div>
                     <UlContact>
-                        <li><PhoneIcon/>Teléfono - 646816908</li>
-                        <li><MailIcon/>Email - javier.cabanasdiaz@gmail.com</li>
+                        <li><PhoneIcon />Teléfono - 646816908</li>
+                        <li><MailIcon />Email - javier.cabanasdiaz@gmail.com</li>
                     </UlContact>
                 </div>
             </HomeContact>

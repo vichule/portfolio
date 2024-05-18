@@ -16,7 +16,6 @@ export const InputContainer = styled.div`
 
 
 export const FormStyled = styled.form`
-    background-color: grey;
     display: grid;
     width: auto;
     border-radius: 2em;
@@ -29,21 +28,22 @@ export const LabelForms = styled.label`
 `
 
 export const InputForms = styled.input`
-    border-radius: 1em;
-    padding: 1em;
     background-color: white;
-    border: none;
     color: deeppink;
     font-size: 1.3rem;
+    font-family: "Bebas Neue", sans-serif;
+    border: 3px solid ${({theme}) => theme.titleColor};
+    padding: 0.5em;
     /* max-width: 12em; */
 `
 
 export const TextAreaForms = styled.textarea`
-    border-radius: 1em;
-    padding: 1em;
     background-color: white;
     border: none;
     color: deeppink;
     font-size: 1.3rem;
     max-height: 8rem;
+    font-family: "Bebas Neue", sans-serif;
+    border: 3px solid ${({theme}) => theme.titleColor};
+    padding: 0.5em;
 `

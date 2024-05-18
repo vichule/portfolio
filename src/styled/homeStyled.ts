@@ -4,6 +4,7 @@ import { FaPhone } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
 import { ImLinkedin } from "react-icons/im";
+import { GrDocumentText } from "react-icons/gr";
 import bannerB from '../assets/sky.jpg';
 
 export const HomeContainer = styled.div`
@@ -251,6 +252,20 @@ export const GitIcon = styled(FaGithub)`
 `
 
 export const LinkedIcon = styled(ImLinkedin)`
+    width: 45px;
+    font-size: 2.5em;
+    margin-left: 0.3em;
+    color: ${({theme})=> theme.btnBg}; 
+    cursor: pointer;
+    position: relative;
+    top: 0.25em;
+    
+    &:hover{
+        color: #d156cd;
+    }
+`
+
+export const CvIcon = styled(GrDocumentText)`
     width: 45px;
     font-size: 2.5em;
     margin-left: 0.3em;
