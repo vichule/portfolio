@@ -18,13 +18,18 @@ export const SwiperProjects = () => {
         <>
             <StyledSwiper
                 modules={[Autoplay, Pagination]}
-                slidesPerView={2}
+                slidesPerView={1}
                 spaceBetween={0}
                 loop={true}
                 pagination={true}
                 autoplay={{
                     delay: 2000,
                     disableOnInteraction: false,
+                  }}
+                  breakpoints={{
+                    1200: {
+                        slidesPerView: 2
+                    }
                   }}
             >
 

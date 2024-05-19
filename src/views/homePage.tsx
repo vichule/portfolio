@@ -5,7 +5,7 @@ import { BasicBtnStyled, LightOff, LightOn, NavDiv, NavLinkStyled } from '../sty
 import { AboutDiv, BannerDiv, CodeIcon, CvIcon, GitIcon, HomeBanner, HomeContact, HomeContainer, HomeProjects, ImgContainer, IntroDiv, LinkedIcon, MailIcon, PhoneIcon, TipsDiv, UlContact, UlStyled, UpBtn } from '../styled/homeStyled';
 import { useNavigate } from 'react-router-dom';
 import { SwiperProjects } from '../components/swiperProjects.tsx';
-import { FormContainer, FormStyled, InputContainer, InputForms, TextAreaForms } from '../styled/formStyled.ts';
+import { FormContainer, FormStyled, InputContainer, InputForms, RowContainer, TextAreaForms } from '../styled/formStyled.ts';
 
 
 
@@ -129,7 +129,7 @@ export const Home = () => {
                 <FormContainer>
                     <FormStyled action="https://formsubmit.co/2461bbd3a28ad50544f2913659e7b2f5" method="POST">
 
-                        <div style={{ display: 'flex' }}>
+                        <RowContainer>
                             <InputContainer>
                                 {/* <LabelForms htmlFor="name">Full Name</LabelForms> */}
                                 <InputForms type="text" name="name" required placeholder='Nombre Completo'/>
@@ -138,7 +138,7 @@ export const Home = () => {
                                 {/* <LabelForms htmlFor="email">Email</LabelForms> */}
                                 <InputForms type="email" name="email" required placeholder='Email para poder escribirte'/>
                             </InputContainer>
-                        </div>
+                        </RowContainer>
                         <InputContainer>
                             {/* <LabelForms htmlFor="subject">Subject</LabelForms> */}
                             <InputForms type="text" name="subject" required placeholder='Asunto a tratar'/>
@@ -157,8 +157,8 @@ export const Home = () => {
                 <h3>Estoy deseando tener noticias tuyas por lo que aquí dejo también mis datos de contacto:</h3>
                 <div>
                     <UlContact>
-                        <li><PhoneIcon />Teléfono - 646816908</li>
-                        <li><MailIcon />Email - javier.cabanasdiaz@gmail.com</li>
+                        <li><PhoneIcon /> 646816908</li>
+                        <li><MailIcon /> javier.cabanasdiaz@gmail.com</li>
                     </UlContact>
                 </div>
             </HomeContact>
