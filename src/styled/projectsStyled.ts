@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { device } from "./breakpoints";
 
 
 
 export const ProjectsContainer = styled.div`
-    margin-bottom: 20em;
+    margin-bottom: 5em;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -25,14 +26,19 @@ export const ProjectsContainer = styled.div`
 `
 
 export const MainImg = styled.div`
-    height: 30em;
-    width: 45em;
+    height: 15em;
+    width: 20em;
 
     img{
         width: 100%;
         height: 100%;
         border-radius: 2em;
         border: 3px solid black;
+    }
+
+    @media ${device.md}{
+        height: 30em;
+        width: 45em;
     }
 `
 

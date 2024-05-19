@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "./breakpoints"
 
 export const FormContainer = styled.div`
     display: grid;
@@ -46,4 +47,11 @@ export const TextAreaForms = styled.textarea`
     font-family: "Bebas Neue", sans-serif;
     border: 3px solid ${({theme}) => theme.titleColor};
     padding: 0.5em;
+`
+
+export const RowContainer = styled.div`
+    
+    @media ${device.md}{
+        display: flex;
+    }
 `

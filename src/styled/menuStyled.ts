@@ -2,11 +2,12 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CiLight } from "react-icons/ci";
 import { MdOutlineNightlight } from "react-icons/md";
+import { device } from "./breakpoints";
 
 
 export const BasicBtnStyled = styled.button`
     font-weight: 600;
-    width: 16rem;
+    width: 12rem;
     height: 3.5rem;
     border: none;
     border-radius: 8px;
@@ -15,12 +16,15 @@ export const BasicBtnStyled = styled.button`
     transition: all ease 300ms;
     display: inline-block;
     align-content: center;
-    margin-right: 1em;
-    margin-left: 1em;
+    margin: 1em;
 
     &:hover{
         background-color: #d156cd;
         color: black;
+    }
+
+    @media ${device.md}{
+        width: 16rem
     }
 `
 
