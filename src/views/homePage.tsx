@@ -6,7 +6,7 @@ import { AboutDiv, BannerDiv, CodeIcon, CvIcon, GitIcon, HomeBanner, HomeContact
 import { useNavigate } from 'react-router-dom';
 import { SwiperProjects } from '../components/swiperProjects.tsx';
 import { FormContainer, FormStyled, InputContainer, InputForms, RowContainer, TextAreaForms } from '../styled/formStyled.ts';
-
+import cv from '../assets/cv.pdf';
 
 
 export const Home = () => {
@@ -19,6 +19,16 @@ export const Home = () => {
     }
 
     const { theme, setTheme } = themeContext;
+
+    // const handleDownload = () => {
+    //     const pdfUrl = "cv.pdf";
+    //     const link = document.createElement("a");
+    //     link.href = pdfUrl;
+    //     link.download = "CVJavierCabañas.pdf"; // specify the filename
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    // };
 
     return (
         <HomeContainer>
@@ -94,10 +104,7 @@ export const Home = () => {
                         <li>Considero que el teletrabajo es muy positivo, aunque siempre es bueno ir a la oficina al menos un día a la semana para mejorar la comunicación entre compañeros.</li>
                         <div className="card">
                             <h1>Si quieres saber más de mí:</h1>
-                            {/* <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor">
-                                 CV
-                            </BasicBtnStyled> */}
-                            <a rel="nofollow noopener noreferrer" target='blank' href="https://www.canva.com/design/DAGDQPHM6HI/lS0cZ9pIWci6bXpKILhXxg/view?utm_content=DAGDQPHM6HI&utm_campaign=designshare&utm_medium=link&utm_source=editor"><CvIcon /></a>
+                            <a rel="nofollow noopener noreferrer" target='blank' href={cv}><CvIcon /></a>
                             <a rel="nofollow noopener noreferrer" target='blank' href="https://www.linkedin.com/in/javinteger/"><LinkedIcon /></a>
                             <a rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule"><GitIcon /></a>
 
