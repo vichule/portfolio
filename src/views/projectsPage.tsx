@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
-import { BasicBtnStyled, LightOff, LightOn, NavDiv, NavLinkStyled } from '../styled/menuStyled';
+import { LightOff, LightOn, LinkedProjects, NavDiv, NavLinkStyled } from '../styled/menuStyled';
 import { BannerDiv, HomeBanner, HomeContainer, IntroDiv, UlStyled } from '../styled/homeStyled';
-import { CardItem, MainImg, ProjectsContainer } from '../styled/projectsStyled';
+import { CardItem, GitRepoIcon, LinkIcon, MainImg, ProjectsContainer } from '../styled/projectsStyled';
 import coolpic from '../assets/coolpic.jpg';
 import oxygen from '../assets/oxygen.jpg';
 import dashboard from '../assets/dashboard.jpg';
@@ -64,11 +64,11 @@ export const Projects = () => {
                             <img src={hotel} alt="" />
                         </MainImg>
                         <div>
-                            <p>Descripcion</p>
+                            <p>Website de un hotel de lujo llamado hotel Miranda. Realizado con HTML & CSS para un despliegue responsive.</p>
                         </div>
                         <div>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule/HotelMiranda">Repositorio</BasicBtnStyled>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://vichule.github.io/HotelMiranda/">Despliegue</BasicBtnStyled>
+                            <LinkedProjects rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule/HotelMiranda"><GitRepoIcon/> CODIGO</LinkedProjects>
+                            <LinkedProjects rel="nofollow noopener noreferrer" target='blank' href="https://vichule.github.io/HotelMiranda/"><LinkIcon/>WEBSITE</LinkedProjects>
                         </div>
                     </CardItem>
                     <CardItem>
@@ -77,11 +77,11 @@ export const Projects = () => {
                             <img src={coolpic} alt="" />
                         </MainImg>
                         <div>
-                            <p>Descripcion</p>
+                            <p>App de búsqueda de fotos responsive. Utilizando React, Redux & styled-components.</p>
                         </div>
                         <div>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule/CoolPic_ReactApp">Repositorio</BasicBtnStyled>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="http://cool-pic-app.s3-website.eu-west-3.amazonaws.com/">Despliegue</BasicBtnStyled>
+                            <LinkedProjects rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule/CoolPic_ReactApp"><GitRepoIcon/> CODIGO</LinkedProjects>
+                            <LinkedProjects rel="nofollow noopener noreferrer" target='blank' href="http://cool-pic-app.s3-website.eu-west-3.amazonaws.com/"><LinkIcon/>WEBSITE</LinkedProjects>
                         </div>
                     </CardItem>
                     <CardItem>
@@ -90,11 +90,12 @@ export const Projects = () => {
                             <img src={dashboard} alt="" />
                         </MainImg>
                         <div>
-                            <p>Descripcion</p>
+                            <p>Dashboard app creada con React, Redux, TypeScript y styled-components. 
+                            Diseñada para los trabajadores del Hotel Miranda con el objetivo de poder gestionar los datos del hotel.(no responsive)</p>
                         </div>
                         <div>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule/dashboard-miranda">Repositorio</BasicBtnStyled>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="http://dashboard-miranda-v.s3-website.eu-west-3.amazonaws.com/">Despliegue</BasicBtnStyled>
+                            <LinkedProjects rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule/dashboard-miranda"><GitRepoIcon/> CODIGO</LinkedProjects>
+                            <LinkedProjects rel="nofollow noopener noreferrer" target='blank' href="http://dashboard-miranda-v.s3-website.eu-west-3.amazonaws.com/"><LinkIcon/>WEBSITE</LinkedProjects>
                         </div>
                     </CardItem>
                     <CardItem>
@@ -103,11 +104,11 @@ export const Projects = () => {
                             <img src={oxygen} alt="" />
                         </MainImg>
                         <div>
-                            <p>Descripcion</p>
+                            <p>Landind page básica y responsive, desarrollada con HTML & CSS.</p>
                         </div>
                         <div>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule/oxygenShop">Repositorio</BasicBtnStyled>
-                            <BasicBtnStyled as="a" rel="nofollow noopener noreferrer" target='blank' href="https://vichule.github.io/oxygenShop/">Despliegue</BasicBtnStyled>
+                            <LinkedProjects rel="nofollow noopener noreferrer" target='blank' href="https://github.com/vichule/oxygenShop"><GitRepoIcon/> CODIGO</LinkedProjects>
+                            <LinkedProjects rel="nofollow noopener noreferrer" target='blank' href="https://vichule.github.io/oxygenShop/"><LinkIcon/>WEBSITE</LinkedProjects>
                         </div>
                     </CardItem>
 

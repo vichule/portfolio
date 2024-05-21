@@ -38,7 +38,7 @@ export const IntroDiv = styled.div`
     p{
         max-width: 40em;
         font-family: "DM Serif Display", serif;
-        font-size: large;
+        font-size: smaller;
     }
     h1{
         font-size: 3em;
@@ -50,6 +50,9 @@ export const IntroDiv = styled.div`
     @media ${device.lg} {
         h1{
             font-size: 7em;
+        }
+        p{
+            font-size: large;
         }
     }
 `
@@ -159,12 +162,18 @@ export const AboutDiv = styled.div`
 
     li{
         margin: 1em;
-        font-size: large;
+        font-size: smaller;
     }
 
     h1{
         font-family: "Bebas Neue", sans-serif;
         color: ${({ theme }) => theme.titleColor};
+    }
+
+    @media ${device.md}{
+        li{
+            font-size: large;
+        }
     }
     
 `
@@ -190,12 +199,6 @@ export const TipsDiv = styled.div`
     margin-bottom: 10em;
 
     div:nth-child(1){
-        /* position: relative;
-        top: 200px;
-        float: left;
-        margin-left: 50px;
-        border: 5px solid white;
-        padding: 25px; */
         position: relative;
         top: 50px;
         float: left;
