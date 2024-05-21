@@ -28,6 +28,30 @@ export const BasicBtnStyled = styled.button`
     }
 `
 
+export const LinkedProjects = styled.a`
+    font-weight: 600;
+    width: 8rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: ${({ theme }) => theme.btnBg};
+    color: white;
+    transition: all ease 300ms;
+    display: inline-block;
+    align-content: center;
+    margin: 0.5em;
+
+
+    &:hover{
+        background-color: #d156cd;
+        color: black;
+    }
+
+    @media ${device.md}{
+        width: 10rem
+    }
+`
+
 export const LightOn = styled(CiLight)`
     font-weight: 600;
     width: 5rem;
