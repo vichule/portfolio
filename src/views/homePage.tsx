@@ -132,7 +132,7 @@ export const Home = () => {
             </HomeProjects>
             <HomeContact id='contact'>
                 <h1>Contact</h1>
-                <h3>Desde aquí podrás enviarme un mensaje desde este formulario directo a mi bandeja de entrada</h3>
+                <h3>Desde aquí podrás enviarme un mensaje desde este formulario directo a mi bandeja de entrada gracias a formSubmit!</h3>
                 <FormContainer>
                     <FormStyled action="https://formsubmit.co/2461bbd3a28ad50544f2913659e7b2f5" method="POST">
 
@@ -156,7 +156,7 @@ export const Home = () => {
                     </FormStyled>
 
                 </FormContainer>
-                <h3>Estoy deseando tener noticias tuyas por lo que aquí dejo también mis datos de contacto:</h3>
+                <h3>Estoy deseando tener noticias tuyas. ¿No te gustan los formularios? Dejo también mis datos de contacto:</h3>
                 <div>
                     <UlContact>
                         <li><PhoneIcon /> 646816908</li>
