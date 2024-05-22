@@ -18,7 +18,6 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 function App() {
 
   const [theme, setTheme] = useState('light')
-  console.log(theme)
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

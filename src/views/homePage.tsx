@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { FormEvent, useContext } from 'react';
 import photo from '../assets/code.jpg'
 import { ThemeContext } from '../App';
 import { BasicBtnStyled, LightOff, LightOn, NavDiv, NavLinkStyled } from '../styled/menuStyled';
@@ -29,6 +29,50 @@ export const Home = () => {
     //     link.click();
     //     document.body.removeChild(link);
     // };
+
+
+    interface FormData extends EventTarget {
+        name: HTMLFormElement,
+        email: HTMLFormElement,
+        subject: HTMLFormElement,
+        message: HTMLFormElement,
+    
+    }
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        const data = event.target as FormData
+        const name = data.name.value
+        const email = data.email.value
+        const subject = data.subject.value
+        const message = data.message.value
+        console.log(data)
+        console.log(name)
+        console.log(email)
+        console.log(subject)
+        console.log(message)
+
+        fetch("https://formsubmit.co/2461bbd3a28ad50544f2913659e7b2f5", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            })
+        })
+            .then(response => {
+                console.log(response)
+                return response.json()
+                
+            })
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
+    }
 
     return (
         <HomeContainer>
@@ -134,21 +178,21 @@ export const Home = () => {
                 <h1>Contact</h1>
                 <h3>Desde aquí podrás enviarme un mensaje desde este formulario directo a mi bandeja de entrada gracias a formSubmit!</h3>
                 <FormContainer>
-                    <FormStyled action="https://formsubmit.co/2461bbd3a28ad50544f2913659e7b2f5" method="POST">
+                    <FormStyled onSubmit={(event)=> handleSubmit(event)}>
 
                         <RowContainer>
                             <InputContainer>
-                                <InputForms type="text" name="name" required placeholder='Nombre Completo'/>
+                                <InputForms type="text" name="name" required placeholder='Nombre Completo' />
                             </InputContainer>
                             <InputContainer>
-                                <InputForms type="email" name="email" required placeholder='Email para poder escribirte'/>
+                                <InputForms type="email" name="email" required placeholder='Email para poder escribirte' />
                             </InputContainer>
                         </RowContainer>
                         <InputContainer>
-                            <InputForms type="text" name="subject" required placeholder='Asunto a tratar'/>
+                            <InputForms type="text" name="subject" required placeholder='Asunto a tratar' />
                         </InputContainer>
                         <InputContainer>
-                            <TextAreaForms name="notes" id="message" cols={30} rows={8} required placeholder='Deja aqui el mensaje que quieras que reciba'></TextAreaForms>
+                            <TextAreaForms name="message" id="message" cols={30} rows={8} required placeholder='Deja aqui el mensaje que quieras que reciba'></TextAreaForms>
                         </InputContainer>
                         <div className="card">
                             <BasicBtnStyled type="submit">Enviar</BasicBtnStyled>
