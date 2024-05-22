@@ -90,11 +90,11 @@ export const NavLinkStyled = styled(NavLink)`
     &.active {
         font-weight: 600;
         border-bottom: 3px solid ${({ theme }) => theme.titleColor};
-  }
-  &:hover {
-    color: ${({ theme }) => theme.titleColor};
-    filter: drop-shadow(1px 1px 5px deeppink);
-  }
+    }
+    &:hover {
+        color: ${({ theme }) => theme.titleColor};
+        filter: drop-shadow(1px 1px 5px deeppink);
+    }
 `
 
 export const LogoContainer = styled.div`

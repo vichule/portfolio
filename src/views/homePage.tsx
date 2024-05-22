@@ -138,21 +138,16 @@ export const Home = () => {
 
                         <RowContainer>
                             <InputContainer>
-                                {/* <LabelForms htmlFor="name">Full Name</LabelForms> */}
                                 <InputForms type="text" name="name" required placeholder='Nombre Completo'/>
                             </InputContainer>
                             <InputContainer>
-                                {/* <LabelForms htmlFor="email">Email</LabelForms> */}
                                 <InputForms type="email" name="email" required placeholder='Email para poder escribirte'/>
                             </InputContainer>
                         </RowContainer>
                         <InputContainer>
-                            {/* <LabelForms htmlFor="subject">Subject</LabelForms> */}
                             <InputForms type="text" name="subject" required placeholder='Asunto a tratar'/>
                         </InputContainer>
-
                         <InputContainer>
-                            {/* <LabelForms htmlFor="message">Message</LabelForms> */}
                             <TextAreaForms name="notes" id="message" cols={30} rows={8} required placeholder='Deja aqui el mensaje que quieras que reciba'></TextAreaForms>
                         </InputContainer>
                         <div className="card">
