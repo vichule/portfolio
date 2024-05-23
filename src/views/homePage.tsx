@@ -46,13 +46,8 @@ export const Home = () => {
         const email = data.email.value
         const subject = data.subject.value
         const message = data.message.value
-        console.log(data)
-        console.log(name)
-        console.log(email)
-        console.log(subject)
-        console.log(message)
 
-        fetch("https://formsubmit.co/2461bbd3a28ad50544f2913659e7b2f5", {
+        fetch("https://formsubmit.co/ajax/2461bbd3a28ad50544f2913659e7b2f5", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -178,7 +173,7 @@ export const Home = () => {
                 <h1>Contact</h1>
                 <h3>Desde aquí podrás enviarme un mensaje desde este formulario directo a mi bandeja de entrada gracias a formSubmit!</h3>
                 <FormContainer>
-                    <FormStyled onSubmit={(event)=> handleSubmit(event)}>
+                    <FormStyled onSubmit={(event)=> handleSubmit(event)} method='POST'>
 
                         <RowContainer>
                             <InputContainer>
