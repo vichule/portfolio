@@ -1,4 +1,4 @@
-import { FormEvent, useContext } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import photo from '../assets/code.jpg'
 import { ThemeContext } from '../App';
 import { BasicBtnStyled, LightOff, LightOn, NavDiv, NavLinkStyled } from '../styled/menuStyled';
@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { SwiperProjects } from '../components/swiperProjects.tsx';
 import { FormContainer, FormStyled, InputContainer, InputForms, RowContainer, TextAreaForms } from '../styled/formStyled.ts';
 import cv from '../assets/cv.pdf';
+import Swal from 'sweetalert2';
 
 
 export const Home = () => {
@@ -19,16 +20,7 @@ export const Home = () => {
     }
 
     const { theme, setTheme } = themeContext;
-
-    // const handleDownload = () => {
-    //     const pdfUrl = "cv.pdf";
-    //     const link = document.createElement("a");
-    //     link.href = pdfUrl;
-    //     link.download = "CVJavierCabañas.pdf"; // specify the filename
-    //     document.body.appendChild(link);
-    //     link.click();
-    //     document.body.removeChild(link);
-    // };
+    const [spinner, setSpinner] = useState(false);
 
 
     interface FormData extends EventTarget {
@@ -36,7 +28,7 @@ export const Home = () => {
         email: HTMLFormElement,
         subject: HTMLFormElement,
         message: HTMLFormElement,
-    
+
     }
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -46,6 +38,8 @@ export const Home = () => {
         const email = data.email.value
         const subject = data.subject.value
         const message = data.message.value
+
+        setSpinner(true)
 
         fetch("https://formsubmit.co/ajax/2461bbd3a28ad50544f2913659e7b2f5", {
             method: "POST",
@@ -61,9 +55,39 @@ export const Home = () => {
             })
         })
             .then(response => {
-                console.log(response)
-                return response.json()
+
+                setSpinner(false)
+                data.name.value = "";
+                data.email.value = "";
+                data.subject.value = "";
+                data.message.value = "";
                 
+                if (response.ok) {
+                    Swal.fire({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        icon: 'success',
+                        title: "Datos enviados correctamente, gracias por tu tiempo!",
+
+                    });
+                    return response.json()
+                } else {
+                    Swal.fire({
+                        toast: true,
+                        position: "bottom-end",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        icon: 'error',
+                        title: "Ha habido un error, por favor inténtalo de nuevo.",
+
+                    });
+                }
+
+                
+
+
             })
             .then(data => console.log(data))
             .catch(error => console.log(error));
@@ -173,7 +197,7 @@ export const Home = () => {
                 <h1>Contact</h1>
                 <h3>Desde aquí podrás enviarme un mensaje desde este formulario directo a mi bandeja de entrada gracias a formSubmit!</h3>
                 <FormContainer>
-                    <FormStyled onSubmit={(event)=> handleSubmit(event)} method='POST'>
+                    <FormStyled onSubmit={(event) => handleSubmit(event)} method='POST'>
 
                         <RowContainer>
                             <InputContainer>
@@ -190,8 +214,10 @@ export const Home = () => {
                             <TextAreaForms name="message" id="message" cols={30} rows={8} required placeholder='Deja aqui el mensaje que quieras que reciba'></TextAreaForms>
                         </InputContainer>
                         <div className="card">
+
                             <BasicBtnStyled type="submit">Enviar</BasicBtnStyled>
                         </div>
+                        {spinner ? <span>Enviando datos, por favor espere...</span> : ''}
                     </FormStyled>
 
                 </FormContainer>
