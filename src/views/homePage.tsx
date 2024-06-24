@@ -108,11 +108,11 @@ export const Home = () => {
 
                 <div className="card">
                     {theme === 'dark' ? <LightOn onClick={() => {
-                        setTheme(theme === 'dark' ? 'light' : 'dark');
+                        setTheme('light');
                     }}>
                         {theme}
                     </LightOn> : <LightOff onClick={() => {
-                        setTheme(theme === 'dark' ? 'light' : 'dark');
+                        setTheme('dark');
                     }}>
                         {theme}
                     </LightOff>}
