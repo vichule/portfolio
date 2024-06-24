@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 import { LightOff, LightOn, LinkedProjects, NavDiv, NavLinkStyled } from '../styled/menuStyled';
-import { BannerDiv, HomeBanner, HomeContainer, IntroDiv, UlStyled } from '../styled/homeStyled';
+import { BannerDiv, HomeBanner, HomeContainer, IntroDiv, UlStyled, UpBtn } from '../styled/homeStyled';
 import { CardItem, GitRepoIcon, LinkIcon, MainImg, ProjectsContainer } from '../styled/projectsStyled';
 import coolpic from '../assets/coolpic.jpg';
 import oxygen from '../assets/oxygen.jpg';
@@ -145,7 +145,7 @@ export const Projects = () => {
                     </CardItem>
 
                 </ProjectsContainer>
-
+                <UpBtn as='a' href='#intro'>^</UpBtn>
             </HomeContainer>
         </>
     )
