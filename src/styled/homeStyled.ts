@@ -109,7 +109,7 @@ export const ProjectContainer = styled.div`
 
     @media ${device.md}{
         width: 550px;
-        height: auto;
+        height: 300px;
     }
 `
 

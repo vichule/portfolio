@@ -9,6 +9,8 @@ import coolpic from '../assets/coolpic.jpg';
 import oxygen from '../assets/oxygen.jpg';
 import dashboard from '../assets/dashboard.jpg';
 import hotel from '../assets/hotel.jpg';
+import api from '../assets/api.jpg';
+import laravel from '../assets/hotelLaravel.jpg';
 
 
 export const SwiperProjects = () => {
@@ -24,7 +26,7 @@ export const SwiperProjects = () => {
                 pagination={true}
                 autoplay={{
                     delay: 2000,
-                    disableOnInteraction: false,
+                    disableOnInteraction: true,
                   }}
                   breakpoints={{
                     1200: {
@@ -60,6 +62,20 @@ export const SwiperProjects = () => {
                     <ProjectContainer>
                         <h2>Oxygen Shop</h2>
                         <img src={oxygen} />
+
+                    </ProjectContainer>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <ProjectContainer>
+                        <h2>API node-express-mongo</h2>
+                        <img src={api} />
+
+                    </ProjectContainer>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <ProjectContainer>
+                        <h2>Hotel Miranda Laravel</h2>
+                        <img src={laravel} />
 
                     </ProjectContainer>
                 </SwiperSlide>
