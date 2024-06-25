@@ -35,6 +35,7 @@ export const ProjectsContainer = styled.div`
 export const MainImg = styled.div`
     height: 15em;
     width: 20em;
+    display: inline-block;
 
     img{
         width: 100%;
